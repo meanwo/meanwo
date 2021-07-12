@@ -6,6 +6,7 @@
         <h1>METHOD</h1>
         <form action="/accounts/hello_world/" method="post">
             {% csrf_token %}
+            <input type = "text" name="input_text">
             <input type="submit" class="btn btn-dark rounded-pill px-4">
         </form>
 {#변수를 단순 출력만 할 때 중괄호 두 개 사용#}

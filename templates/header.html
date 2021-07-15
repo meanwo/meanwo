@@ -5,7 +5,23 @@
     <div class="Jung_header_button">
         <span>pav1</span>
         <span>pav2</span>
-        <span>pav3</span>
-        <span>pav4</span>
+        {% if not user.is_authenticated %}
+        <span>
+            <a href="{% url 'accountapp:login' %}">
+                Login
+            </a>
+        </span>
+        <span>
+            <a href="{% url 'accountapp:create' %}">
+                SignUp
+            </a>
+        </span>
+        {% else %}
+        <span>
+            <a href="{% url 'accountapp:logout' %}">
+                Logout
+            </a>
+        </span>
+        {% endif %}
     </div>
 </div>

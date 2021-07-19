@@ -43,7 +43,7 @@ class AccountDetailView(DetailView):
 class AccountUpdateView(UpdateView):
     model = User
     form_class = AccountCreationForm
-    conetext_object_name = 'target_user'
+    context_object_name = 'target_user'
     success_url = reverse_lazy('accountapp:hello_world')
     template_name='accountapp/update.html'
 

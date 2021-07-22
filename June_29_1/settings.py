@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'bootstrap4',
     'accountapp',
+    'profileapp',
 ]
 
 MIDDLEWARE = [
@@ -136,7 +137,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-Static_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATICFILES_DIRS = [
     BASE_DIR / "static",

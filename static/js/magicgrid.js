@@ -282,4 +282,12 @@ let magicGrid = new MagicGrid({
   useMin: true
 });
 
+var masonrys =document.getElementsByTagName("img")
+
+//이미지 하나하나 로딩 될 때마다 재배치 한다.
+for (let i=0; i< masonrys.length; i++) {
+  masonrys[i].addEventListener('load', function (){
+    magicGrid.positionItems();
+  }, false)
+}
 magicGrid.listen();

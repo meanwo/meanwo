@@ -13,6 +13,7 @@ import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
+from django.contrib import messages
 from django.urls import reverse_lazy
 
 BASE_DIR = Path(__file__).resolve().parent.parent#BASE_DIR는 settings.py의 상위의 상위 폴더를 가르킴(JUNE_29_1폴더).
@@ -41,7 +42,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
-
+MESSAGE_TAGS = {
+    messages.ERROR: 'danger',
+}
 # Application definition
 
 INSTALLED_APPS = [

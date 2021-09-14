@@ -6,7 +6,7 @@ env_list = dict()
 local_env = open(os.path.join(BASE_DIR,'.env'))#.env까지의 경로
 
 while True:
-    line=local_env.readline()
+    line = local_env.readline()
     if not line:
         break
     line = line.replace('\n','')

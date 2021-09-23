@@ -14,12 +14,24 @@ services:
       - jung_media:/data/media/
 
   django_container_gunicorn:
-    image: django_test_image:3
+    image: django_test_image:4
     networks:
       - jung_network
     volumes:
       - jung_static:/home/meanwo/staticfiles/
       - jung_media:/home/meanwo/media/
+
+  mariadb:
+    image: mariadb:10.5
+    networks:
+      - jung_network
+    volumes:
+      - jung_mariadb:/var/lib/mysql
+    enviroment:
+      MARIADB_ROOT_PASSWORD: password1234
+      MARIADB_DATABASE: django
+      MARIADB_USER: django
+      MARIADB_PASSWORD: password1234
 
 networks:
   jung_network:
@@ -27,3 +39,4 @@ networks:
 volumes:
   jung_static:
   jung_media:
+  jung_mariadb:
